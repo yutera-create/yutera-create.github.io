@@ -88,3 +88,12 @@ footer {
 .current {
     text-shadow: 0 0 5px #aaa;
 }
+header {
+    position: relative;
+}
+
+.diary-nav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
