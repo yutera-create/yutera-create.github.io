@@ -85,3 +85,6 @@ footer {
     color: #999;
     font-size: 12px;
 }
+.current {
+    text-shadow: 0 0 5px #aaa;
+}
