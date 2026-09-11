@@ -95,33 +95,64 @@ header {
     navigation: auto;
 }
 
-::view-transition-old(root) {
-    animation: slide-out 0.4s ease;
+/* 普通にページへ移動する */
+html:active-view-transition-type(forward) {
+    &::view-transition-old(root) {
+        animation: slide-out-right 0.4s ease both;
+    }
+
+    &::view-transition-new(root) {
+        animation: slide-in-left 0.4s ease both;
+    }
 }
 
-::view-transition-new(root) {
-    animation: slide-in 0.4s ease;
+/* ホームへ戻る */
+html:active-view-transition-type(home) {
+    &::view-transition-old(root) {
+        animation: slide-out-left 0.4s ease both;
+    }
+
+    &::view-transition-new(root) {
+        animation: slide-in-right 0.4s ease both;
+    }
 }
 
-@keyframes slide-in {
+@keyframes slide-in-left {
     from {
         transform: translateX(-100%);
     }
+
     to {
         transform: translateX(0);
     }
 }
 
-@keyframes slide-out {
+@keyframes slide-out-right {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(100%);
     }
 }
-.diary-nav {
-    position: absolute;
-    top: 0;
-    right: 25px;
+
+@keyframes slide-out-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
