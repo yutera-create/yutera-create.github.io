@@ -1,12 +1,14 @@
 function getTransitionType(fromUrl, toUrl) {
     if (!fromUrl || !toUrl) return null;
 
+    const from = new URL(fromUrl);
     const to = new URL(toUrl);
 
-    if (
+    const toHome =
         to.pathname.endsWith("/index.html") ||
-        to.pathname.endsWith("/")
-    ) {
+        to.pathname.endsWith("/");
+
+    if (toHome) {
         return "home";
     }
 
