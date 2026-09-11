@@ -95,29 +95,26 @@ header {
     navigation: auto;
 }
 
-/* 普通にページへ移動する */
-html:active-view-transition-type(forward) {
-    &::view-transition-old(root) {
-        animation: slide-out-right 0.4s ease both;
-    }
-
-    &::view-transition-new(root) {
-        animation: slide-in-left 0.4s ease both;
-    }
+/* 日記・音楽・感想へ行くとき */
+html:active-view-transition-type(forward)::view-transition-old(root) {
+    animation: none;
 }
 
-/* ホームへ戻る */
-html:active-view-transition-type(home) {
-    &::view-transition-old(root) {
-        animation: slide-out-left 0.4s ease both;
-    }
-
-    &::view-transition-new(root) {
-        animation: slide-in-right 0.4s ease both;
-    }
+html:active-view-transition-type(forward)::view-transition-new(root) {
+    animation: page-in 0.45s ease both;
 }
 
-@keyframes slide-in-left {
+/* ホームへ戻るとき */
+html:active-view-transition-type(home)::view-transition-old(root) {
+    animation: page-back 0.45s ease both;
+}
+
+html:active-view-transition-type(home)::view-transition-new(root) {
+    animation: none;
+}
+
+/* 左からページが乗ってくる */
+@keyframes page-in {
     from {
         transform: translateX(-100%);
     }
@@ -127,33 +124,14 @@ html:active-view-transition-type(home) {
     }
 }
 
-@keyframes slide-out-right {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes slide-out-left {
+/* ページが左へ帰っていく */
+@keyframes page-back {
     from {
         transform: translateX(0);
     }
 
     to {
         transform: translateX(-100%);
-    }
-}
-
-@keyframes slide-in-right {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
     }
 }
 header {
