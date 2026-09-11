@@ -91,49 +91,7 @@ footer {
 header {
     position: relative;
 }
-@view-transition {
-    navigation: auto;
-}
 
-/* 日記・音楽・感想へ行くとき */
-html:active-view-transition-type(forward)::view-transition-old(root) {
-    animation: none;
-}
-
-html:active-view-transition-type(forward)::view-transition-new(root) {
-    animation: page-in 0.45s ease both;
-}
-
-/* ホームへ戻るとき */
-html:active-view-transition-type(home)::view-transition-old(root) {
-    animation: page-back 0.45s ease both;
-}
-
-html:active-view-transition-type(home)::view-transition-new(root) {
-    animation: none;
-}
-
-/* 左からページが乗ってくる */
-@keyframes page-in {
-    from {
-        transform: translateX(-100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* ページが左へ帰っていく */
-@keyframes page-back {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
 header {
     position: relative;
 }
@@ -142,4 +100,48 @@ header {
     position: absolute;
     top: 0;
     right: 25px;
+}
+@view-transition {
+    navigation: auto;
+}
+
+/* 古いページと新しいページを重ねる */
+::view-transition-image-pair(root) {
+    isolation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+/* 新しいページが左から入ってくる */
+html:active-view-transition-type(forward)::view-transition-new(root) {
+    animation: enter-from-left 0.45s ease both;
+}
+
+/* ホームへ戻るとき、現在のページが左へ帰る */
+html:active-view-transition-type(home)::view-transition-old(root) {
+    animation: leave-to-left 0.45s ease both;
+}
+
+@keyframes enter-from-left {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes leave-to-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
