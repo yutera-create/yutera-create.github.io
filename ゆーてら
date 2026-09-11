@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>湯寺のホームページ</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f5f5f2;
+      color: #222;
+      font-family: serif;
+      line-height: 1.8;
+    }
+
+    header {
+      max-width: 800px;
+      margin: 60px auto 30px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: normal;
+    }
+
+    nav {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 0 20px 15px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-right: 25px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      border-left: 3px solid #555;
+      padding-left: 10px;
+    }
+
+    .entry {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .date {
+      color: #888;
+      font-size: 13px;
+    }
+
+    .entry a {
+      color: #222;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 20px;
+      border-top: 1px solid #ccc;
+      color: #888;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>湯寺のホームページ</h1>
+  </header>
+
+  <nav>
+    <a href="#diary">日記</a>
+    <a href="#music">音楽</a>
+    <a href="#impressions">感想</a>
+  </nav>
+
+  <main>
+
+    <section id="diary">
+      <h2>日記</h2>
+
+      <div class="entry">
+        <div class="date">2026.09.11</div>
+        <a href="#">ホームページを作り始めた。</a>
+      </div>
+
+    </section>
+
+    <section id="music">
+      <h2>音楽</h2>
+
+      <div class="entry">
+        <div class="date">2026.09.11</div>
+        <a href="#">最近聴いた音楽について。</a>
+      </div>
+
+    </section>
+
+    <section id="impressions">
+      <h2>感想</h2>
+
+      <div class="entry">
+        <div class="date">2026.09.11</div>
+        <a href="#">本や映画などの感想。</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 湯寺
+  </footer>
+
+</body>
+</html>
