@@ -156,3 +156,12 @@ html:active-view-transition-type(home) {
         transform: translateX(0);
     }
 }
+header {
+    position: relative;
+}
+
+.diary-nav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
