@@ -145,3 +145,8 @@ html:active-view-transition-type(home)::view-transition-old(root) {
         transform: translateX(-100%);
     }
 }
+.top-image {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 80px;
+}
